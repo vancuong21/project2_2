@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>edit user</title>
+</head>
+<body>
+<h1>Edit User Role</h1>
+
+<form th:action="@{/user-role/edit}" method="post">
+  <div>
+    <input type="text" name="id" th:value="${userRole.id}" placeholder="enter userId...">ID
+  </div>
+  <div>
+    <input type="text" name="userId" th:value="${userRole.userId}" placeholder="enter userId...">userId
+  </div>
+  <div>
+    <input type="radio" name="role" value="ROLE_ADMIN" checked="${userRole.role == 'ROLE_ADMIN'}">ROLE_ADMIN
+  </div>
+  <div>
+    <input type="radio" name="role" value="ROLE_STUDENT" checked="${userRole.role == 'ROLE_STUDENT'}">ROLE_STUDENT
+  </div>
+  <div>
+    <button type="submit">Update</button>
+  </div>
+</form>
+</body>
+</html>
